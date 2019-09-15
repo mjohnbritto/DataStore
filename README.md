@@ -64,7 +64,7 @@ myDataStore.delete(String key)
 </pre>
 
 <h3>Sample DataStore consumer</h3>
-<p>The sample DataStore consumer application is here <a href="src/com/datastore/client/main/DemoDataStoreClient.java">DataStoreConsumer</a></p>
+<p>The sample DataStore consumer application is here <a href="https://github.com/mjohnbritto/DataStoreConsumer">DataStoreConsumer</a></p>
 
 <p>The sample response of DataStore consumer application given below</p>
 <pre>
