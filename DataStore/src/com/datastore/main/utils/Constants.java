@@ -2,6 +2,8 @@ package com.datastore.main.utils;
 /**
  * @author John Britto
  *
+ *
+ *Contains the constants
  */
 public class Constants {
 	public static final String defaultDataStoreLoc="C:\\Users\\Public\\Documents";

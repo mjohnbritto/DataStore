@@ -15,15 +15,24 @@ import org.json.simple.JSONObject;
 import com.datastore.main.bean.Data;
 /**
  * @author John Britto
- *
+ * This class Handles general util methods like validation, file operation like read,write,update
  */
 public class CommonUtils {
 
+	/**
+	 * To get the current processName
+	 * @return the process name as a string
+	 */
 	public static String getProcessName() {
 		String processName = ManagementFactory.getRuntimeMXBean().getName();
 		return processName;
 	}
 	
+	/**
+	 * To validate the key of the element
+	 * @param key The key of the element 
+	 * @return the status of the validation either true or false
+	 */
 	public static boolean isKeyNameValid(String key){
 		if(key.length()>Constants.KEY_MAX_LENGTH){
 			return false;
@@ -31,6 +40,12 @@ public class CommonUtils {
 		return true;
 	}
 	
+	/**
+	 * To check if the given key is already available in DataStore or not
+	 * @param key The key of the element
+	 * @param filePath The DataStore location in laptop
+	 * @return returns true if key is already available otherwise false
+	 */
 	public static boolean isKeyExists(String key, String filePath){
 		boolean isKeyExists=false;
 		FileInputStream fileInputStream = null;
@@ -94,6 +109,12 @@ public class CommonUtils {
 		return isKeyExists;
 	}
 	
+	/**
+	 * To write the DataStore-File Handling
+	 * @param data The element to write in DataStore
+	 * @param filePath The DataStore location on the laptop
+	 * @return the status of the write operation, true if succeeded otherwise false
+	 */
 	public static boolean writeData(Data data, String filePath){
 		FileOutputStream fileOutputStream = null;
 		ObjectOutputStream objectOutputStream = null;
@@ -173,6 +194,13 @@ public class CommonUtils {
 		}
 	}
 	
+	/**
+	 * 
+	 * To read an element from the DataStore
+	 * @param key The key of the element to read
+	 * @param filePath The DataStore location on the laptop
+	 * @return returns the element if available otherwise returns null
+	 */
 	public static Data readData(String key, String filePath){
 		FileInputStream fileInputStream = null;
 		ObjectInputStream objectInputStream = null;
@@ -214,6 +242,12 @@ public class CommonUtils {
 		}
 	}
 	
+	/**
+	 * To delete an element from the DataStore
+	 * @param key The key of the element to delete from the DataStore
+	 * @param filePath The location of the DataStore in laptop
+	 * @return the status of the deletion operation, true is element is deleted otherwise false.
+	 */
 	public static boolean deleteData(String key, String filePath){
 
 		FileOutputStream fileOutputStream = null;
