@@ -5,17 +5,66 @@ A file-based key-value data store that supports the basic CRD (create, read, and
 <p>First create a project and add the DataStore dependency, then you will be able instantiate and use the DataStore for your project usecase. For now the DataStore is available as a jar dependency only. Click here to download the <a href="datastore.jar">datastore.jar</a> <br/>
 <p>Here's an example given below</p>
 <pre>
-//To Instantiate the DataStore library
-DataStore myDataStore = new DataStore("C:\\Users\\John\\Documents\\DataStore");//pass file location
-//To Create an element
-myDataStore.create("1", jsonObject,10);
-//To Read the element
-myDataStore.read("1")
-//To Delete an element
-myDataStore.delete("1")
+
+/**
+	 * Constructor initialize the DataStore with default storage location
+	 */
+DataStore myDataStore = new DataStore();// default location will be "C:\\Users\\Public\\Documents"
+
+/**
+	 * Constructor initialize the DataStore with given storage location
+	 * 
+	 * @param filePath
+	 *            the storage location path
+	 */
+DataStore myDataStore = new DataStore(String filePath);//pass file location
+
+/**
+	 * 
+	 * Method to create an element in the DataStore
+	 * 
+	 * @param key
+	 *            The key of the element
+	 * @param value
+	 *            The value of the element
+	 * @return status of the operation
+	 */
+myDataStore.create(String key, JSONObject value);
+
+/**
+	 * Method to create an element in the DataStore
+	 * 
+	 * @param key
+	 *            The key of the element
+	 * @param value
+	 *            The value of the element
+	 * @param timeToLive
+	 *            Number of seconds after which the element is destroyed
+	 * @return status of the operation
+	 */
+myDataStore.create(String key, JSONObject value, int timeToLive);
+
+/**
+	 * Method to read an element from the DataStore
+	 * 
+	 * @param key
+	 *            The key of the element to read the element
+	 * @return The value as type of JSONObject
+	 */
+myDataStore.read(String key)
+
+/**
+	 * Method to delete an element from the DataStore
+	 * 
+	 * @param key
+	 *            The key of the element to read the element
+	 * @return The status of the delete operation
+	 */
+myDataStore.delete(String key)
 </pre>
 
-<p>The sample DataStore consumer application is here <a href="DataStore/src/com/datastore/main/DataStoreConsumer.java">Click</a> here</p>
+<h3>Sample DataStore consumer</h3>
+<p>The sample DataStore consumer application is here <a href="src/com/datastore/client/main/DemoDataStoreClient.java">DataStoreConsumer</a></p>
 
 <p>The sample response of DataStore consumer application given below</p>
 <pre>
