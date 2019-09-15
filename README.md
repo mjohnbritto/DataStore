@@ -2,6 +2,7 @@
 A file-based key-value data store that supports the basic CRD (create, read, and delete) operations. This data store is meant to be used as a local storage for one single process on one laptop. The data store can be exposed as a library to clients that can instantiate a class and work with the data store.
 <h2> How to consume the DataStore library?</h2>
 
+<p>First create a project and add the DataStore dependency, then you will be able instantiate and use the DataStore for your project usecase. For now the DataStore is available as a jar dependency only. Click here to download the <a href="datastore.jar">datastore.jar</a> <br/>
 <p>Here's an example given below</p>
 <pre>
 //To Instantiate the DataStore library
@@ -14,9 +15,9 @@ myDataStore.read("1")
 myDataStore.delete("1")
 </pre>
 
-<p>The sample consumer application is here <a href="DataStore/src/com/datastore/main/DataStoreConsumer.java">Click</a> here</p>
+<p>The sample DataStore consumer application is here <a href="DataStore/src/com/datastore/main/DataStoreConsumer.java">Click</a> here</p>
 
-<p>The sample response given below</p>
+<p>The sample response of DataStore consumer application given below</p>
 <pre>
 =============================================================
 ========================CREATE ==============================
